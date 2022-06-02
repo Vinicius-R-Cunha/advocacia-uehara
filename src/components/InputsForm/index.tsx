@@ -73,7 +73,7 @@ const Textarea = styled.textarea`
   color: #000000;
 
   box-sizing: border-box;
-  padding: 10px 9px 8px 13px;
+  padding: 8px 9px 8px 13px;
 
   resize: none;
 
