@@ -1,3 +1,4 @@
+import { BsFillTelephoneFill } from "react-icons/bs";
 import styled from "styled-components";
 
 export default function Contact() {
@@ -5,7 +6,10 @@ export default function Contact() {
     <Container>
       <Title>Atendimento por Telefone</Title>
       <Description>Clique no botão e entre em contato agora mesmo.</Description>
-      <Button>(11) 94236-9346</Button>
+      <Button>
+        <BsFillTelephoneFill className="phone-icon" />
+        (11) 94236-9346
+      </Button>
     </Container>
   );
 }
@@ -26,7 +30,9 @@ const Container = styled.div`
 const Title = styled.p`
   width: 80%;
 
-  font-size: 24px;
+  font-family: Frank Ruhl Libre;
+  font-weight: 700;
+  font-size: 25px;
   letter-spacing: 2px;
   line-height: 28px;
   text-align: center;
@@ -51,13 +57,22 @@ const Button = styled.button`
   width: 210px;
   height: 49px;
 
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: #ffffff;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #ffffff;
 
   margin-top: 20px;
+  gap: 5px;
 
-  background-color: red;
-  border-radius: 40px;
+  background-color: #e0a067;
+  border-radius: 6px;
+
+  .phone-icon {
+    font-size: 18px;
+  }
 `;
