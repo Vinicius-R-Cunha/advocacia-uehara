@@ -28,7 +28,7 @@ export default function Socials() {
         <Social>
           <MdEmail />
         </Social>
-        <Description>teste@gmail.com</Description>
+        <Description>tamy@gmail.com</Description>
       </SocialDiv>
     </Container>
   );
@@ -82,5 +82,5 @@ const Description = styled.p`
   letter-spacing: 1px;
   line-height: 28px;
   text-align: center;
-  color: #ffffff;
+  color: #d5c79a;
 `;

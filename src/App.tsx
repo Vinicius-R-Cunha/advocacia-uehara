@@ -1,3 +1,5 @@
+import Header from "./components/Header";
+import Introduction from "./components/Introduction";
 import Contact from "./components/Contact";
 import InputsForm from "./components/InputsForm";
 import Socials from "./components/Socials";
@@ -7,19 +9,18 @@ import "./styles/index.css";
 import styled from "styled-components";
 
 export default function App() {
+  function openWhatsApp() {
+    window.open(`https://api.whatsapp.com/send?phone=5511942369346`, "_blank");
+  }
+
   return (
     <>
+      <Header />
+      <Introduction />
       <Contact />
       <InputsForm />
       <Socials />
-      <WhatsIcon
-        onClick={() =>
-          window.open(
-            `https://api.whatsapp.com/send?phone=5511942369346`,
-            "_blank"
-          )
-        }
-      >
+      <WhatsIcon onClick={openWhatsApp}>
         <BsWhatsapp />
       </WhatsIcon>
     </>

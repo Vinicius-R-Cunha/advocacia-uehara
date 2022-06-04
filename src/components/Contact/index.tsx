@@ -24,7 +24,7 @@ const Container = styled.div`
 
   padding: 22px 0;
 
-  background-color: #2c2c2c;
+  background-color: #211a0d;
 `;
 
 const Title = styled.p`
@@ -36,7 +36,7 @@ const Title = styled.p`
   letter-spacing: 2px;
   line-height: 28px;
   text-align: center;
-  color: #ffffff;
+  color: #d5c79a;
 
   margin-bottom: 15px;
 `;
@@ -48,7 +48,7 @@ const Description = styled.p`
   letter-spacing: 1px;
   line-height: 18px;
   text-align: center;
-  color: #ffffff;
+  color: #e1e1e1;
 `;
 
 const Button = styled.button`

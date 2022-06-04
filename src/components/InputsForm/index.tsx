@@ -1,8 +1,12 @@
+import background from "../../assets/background_inputs.avif";
 import styled from "styled-components";
 
 export default function InputsForm() {
   return (
     <Container>
+      <BackgroundImage src={background} alt="" />
+      <BackgroundDarkness />
+
       <Title>Entre em contato:</Title>
       <Input type="text" placeholder="Nome" />
       <Input type="text" placeholder="E-mail" />
@@ -24,19 +28,47 @@ const Container = styled.form`
 
   gap: 18px;
 
-  background-color: black;
+  position: relative;
+`;
+
+const BackgroundImage = styled.img`
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  z-index: -3;
+`;
+
+const BackgroundDarkness = styled.div`
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.55);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  z-index: 0;
 `;
 
 const Title = styled.p`
   font-family: Frank Ruhl Libre;
   font-weight: 700;
-  font-size: 27px;
+  font-size: 29px;
   letter-spacing: 2px;
   line-height: 28px;
   text-align: center;
-  color: #ffffff;
+  color: #d5c79a;
 
   margin-bottom: 8px;
+
+  z-index: 0;
 `;
 
 const Input = styled.input`
@@ -56,6 +88,7 @@ const Input = styled.input`
 
   background-color: #ffffff;
 
+  z-index: 0;
   ::placeholder {
     font-weight: 700;
     color: rgba(0, 0, 0, 0.4);
@@ -80,6 +113,8 @@ const Textarea = styled.textarea`
   border-radius: 6px;
 
   background-color: #ffffff;
+
+  z-index: 0;
 
   :focus {
     outline: none;
@@ -111,6 +146,8 @@ const Button = styled.button`
 
   background-color: #e0a067;
   border-radius: 6px;
+
+  z-index: 0;
 
   .phone-icon {
     font-size: 18px;
