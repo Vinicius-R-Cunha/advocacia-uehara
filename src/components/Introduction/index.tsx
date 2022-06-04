@@ -9,7 +9,7 @@ export default function Introduction() {
       <BackgroundDarkness />
 
       <Title>Escritório de Advocacia Especializado</Title>
-      <Description>Criminalista • Cível • Família • Tributário</Description>
+      <Description>Criminalista • Cível • Família</Description>
       <Button>
         <BsWhatsapp className="phone-icon" />
         Chame no WhatsApp
@@ -26,7 +26,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
 
-  padding: 50px 0;
+  padding: 90px 0;
 
   position: relative;
 `;
@@ -48,7 +48,7 @@ const BackgroundDarkness = styled.div`
   width: 100%;
   height: 100%;
 
-  background-color: rgba(0, 0, 0, 0.72);
+  background-color: rgba(0, 0, 0, 0.76);
 
   position: absolute;
   top: 0;
@@ -103,7 +103,6 @@ const Button = styled.button`
   margin-top: 25px;
   gap: 5px;
 
-  /* background-color: #e0a067; */
   background-color: #1db954;
   border-radius: 6px;
 

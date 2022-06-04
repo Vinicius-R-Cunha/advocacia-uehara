@@ -14,21 +14,9 @@ export default function Socials() {
       </SocialDiv>
       <SocialDiv>
         <Social>
-          <FaFacebookF />
-        </Social>
-        <Description>advocacia_uehara</Description>
-      </SocialDiv>
-      <SocialDiv>
-        <Social>
-          <BsInstagram />
-        </Social>
-        <Description>advocacia_uehara</Description>
-      </SocialDiv>
-      <SocialDiv>
-        <Social>
           <MdEmail />
         </Social>
-        <Description>tamy@gmail.com</Description>
+        <Description>tamy_uehara@hotmail.com</Description>
       </SocialDiv>
     </Container>
   );
@@ -43,13 +31,13 @@ const Container = styled.div`
 
   padding: 35px 0;
 
-  gap: 15px;
+  gap: 20px;
 
-  background-color: #2c2c2c;
+  background-color: #ffffff;
 `;
 
 const SocialDiv = styled.div`
-  width: 70%;
+  width: 90%;
 
   display: flex;
   align-items: center;
@@ -70,7 +58,7 @@ const Social = styled.div`
 
   margin-left: 15px;
 
-  background-color: #e0a067;
+  background-color: #c37127;
 
   border-radius: 16px;
 `;
@@ -82,5 +70,5 @@ const Description = styled.p`
   letter-spacing: 1px;
   line-height: 28px;
   text-align: center;
-  color: #d5c79a;
+  color: #c37127;
 `;
