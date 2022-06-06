@@ -1,5 +1,7 @@
 import Header from "./components/Header";
 import Introduction from "./components/Introduction";
+import ActingAreas from "./components/ActingAreas";
+import WhoWeAre from "./components/WhoWeAre";
 import Contact from "./components/Contact";
 import InputsForm from "./components/InputsForm";
 import Socials from "./components/Socials";
@@ -17,6 +19,8 @@ export default function App() {
     <>
       <Header />
       <Introduction />
+      <ActingAreas />
+      <WhoWeAre />
       <Contact />
       <InputsForm />
       <Socials />

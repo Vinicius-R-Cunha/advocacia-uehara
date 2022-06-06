@@ -26,7 +26,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
 
-  padding: 90px 0;
+  padding: 90px 0 65px 0;
 
   position: relative;
 `;
@@ -100,7 +100,7 @@ const Button = styled.button`
   justify-content: center;
   align-items: center;
 
-  margin-top: 25px;
+  margin-top: 50px;
   gap: 5px;
 
   background-color: #1db954;
