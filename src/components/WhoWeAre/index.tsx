@@ -5,8 +5,21 @@ export default function WhoWeAre() {
     <Container>
       <Title>Quem somos</Title>
       <Description>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel tenetur
-        sequi est dolorem, labore ducimus?
+        <Paragraph>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel tenetur
+          sequi est dolorem, labore ducimus? Lorem ipsum dolor sit amet,
+        </Paragraph>
+
+        <Paragraph>
+          consectetur adipisicing elit. Inventore libero voluptatibus dicta
+          minus, facilis ipsa aspernatur numquam cumque mollitia consectetur non
+          error. Nostrum, velit quis.
+        </Paragraph>
+        <Paragraph>
+          consectetur adipisicing elit. Inventore libero voluptatibus dicta
+          minus, facilis ipsa aspernatur numquam cumque mollitia consectetur non
+          error. Nostrum, velit quis.
+        </Paragraph>
       </Description>
     </Container>
   );
@@ -43,4 +56,8 @@ const Description = styled.p`
   color: grey;
 
   padding-bottom: 30px;
+`;
+
+const Paragraph = styled.p`
+  margin-bottom: 20px;
 `;
