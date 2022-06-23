@@ -1,20 +1,47 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
-import areasArray from "../../data/actingAreas";
+import areasArray, { areasArrayInterface } from "../../data/actingAreas";
 import { ContainerNameProp } from "../../types";
+import ReadMore from "../ReadMore";
 
 export default function ActingAreas() {
+  const [actingAreasArray, setActingAreasArray] = useState([] as any[]);
+
+  useEffect(() => {
+    setActingAreasArray(addReadMoreIsOpenKey(areasArray));
+  }, []);
+
+  function addReadMoreIsOpenKey(array: areasArrayInterface[]) {
+    return array.map((obj) => ({ ...obj, readMoreIsOpen: false }));
+  }
+
+  function readMoreSelection(area: any, open: boolean) {
+    setActingAreasArray(() => {
+      for (let i = 0; i < actingAreasArray.length; i++) {
+        if (actingAreasArray[i].name === area.name) {
+          actingAreasArray[i].readMoreIsOpen = open;
+        }
+      }
+      return [...actingAreasArray];
+    });
+  }
+
   return (
     <Container name="actingAreas">
       <Title>Áreas de atuação</Title>
 
-      {areasArray.map((area) => {
+      {actingAreasArray.map((area: any) => {
         return (
-          <Area key={area.id}>
+          <Area key={area.name}>
             <Image src={area.src} alt="" />
             <BackgroundDarkness />
 
+            {area.readMoreIsOpen && (
+              <ReadMore area={area} readMoreSelection={readMoreSelection} />
+            )}
+
             <Name>{area.name}</Name>
-            <Info>Ler sobre</Info>
+            <Info onClick={() => readMoreSelection(area, true)}>Ler sobre</Info>
           </Area>
         );
       })}
