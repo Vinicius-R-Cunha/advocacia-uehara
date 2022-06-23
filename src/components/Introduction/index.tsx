@@ -2,10 +2,11 @@ import styled from "styled-components";
 import background from "../../assets/background.jpeg";
 import { BsWhatsapp } from "react-icons/bs";
 import Header from "../Header";
+import { ContainerNameProp } from "../../types";
 
 export default function Introduction({ openWhatsApp }: any) {
   return (
-    <Container>
+    <Container name="home">
       <Header />
 
       <BackgroundImage src={background} alt="" />
@@ -23,7 +24,7 @@ export default function Introduction({ openWhatsApp }: any) {
   );
 }
 
-const Container = styled.div`
+const Container = styled.div<ContainerNameProp>`
   width: 100%;
 
   display: flex;

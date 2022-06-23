@@ -1,5 +1,6 @@
 import background from "../../assets/background_inputs.avif";
 import styled from "styled-components";
+import { ContainerNameProp } from "../../types";
 
 export default function InputsForm() {
   function handleSubmit(e: React.MouseEvent) {
@@ -7,7 +8,7 @@ export default function InputsForm() {
   }
 
   return (
-    <Container>
+    <Container name="sendMessage">
       <BackgroundImage src={background} alt="" />
       <BackgroundDarkness />
 
@@ -21,7 +22,7 @@ export default function InputsForm() {
   );
 }
 
-const Container = styled.form`
+const Container = styled.form<ContainerNameProp>`
   width: 100%;
 
   display: flex;

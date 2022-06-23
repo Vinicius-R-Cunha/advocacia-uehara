@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import areasArray from "../../data/actingAreas";
+import { ContainerNameProp } from "../../types";
 
 export default function ActingAreas() {
   return (
-    <Container>
+    <Container name="actingAreas">
       <Title>Áreas de atuação</Title>
 
       {areasArray.map((area) => {
@@ -21,7 +22,7 @@ export default function ActingAreas() {
   );
 }
 
-const Container = styled.div`
+const Container = styled.div<ContainerNameProp>`
   width: 100%;
 
   display: flex;

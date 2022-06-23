@@ -1,8 +1,9 @@
 import styled from "styled-components";
+import { ContainerNameProp } from "../../types";
 
 export default function WhoWeAre() {
   return (
-    <Container>
+    <Container name="whoWeAre">
       <Title>Quem somos</Title>
       <Description>
         <Paragraph>
@@ -25,7 +26,7 @@ export default function WhoWeAre() {
   );
 }
 
-const Container = styled.div`
+const Container = styled.div<ContainerNameProp>`
   width: 100%;
 
   display: flex;

@@ -1,24 +1,48 @@
 import styled from "styled-components";
+import openDropDown from "../../animations/openDropDown";
+import closeDropDown from "../../animations/closeDropDown";
 import navButtonsArray from "../../data/navButtons";
+import { Link } from "react-scroll";
 
-export default function NavButtonsMobile() {
+interface Props {
+  menuIsOpen: boolean;
+}
+
+export default function NavButtonsMobile({ menuIsOpen, setMenuIsOpen }: any) {
   return (
-    <Container>
+    <Container menuIsOpen={menuIsOpen}>
       {navButtonsArray.map((button) => {
-        return <NavButton key={button.name}>{button.name}</NavButton>;
+        return (
+          <NavButton
+            key={button.name}
+            to={button.to}
+            smooth={true}
+            offset={0}
+            duration={800}
+            onClick={() => setMenuIsOpen(false)}
+          >
+            {button.name}
+          </NavButton>
+        );
       })}
     </Container>
   );
 }
 
-const Container = styled.nav`
+const Container = styled.nav<Props>`
   width: 100%;
+
+  display: ${(props) => (props.menuIsOpen ? "block" : "hidden")};
+
+  animation: ${(props) => (props.menuIsOpen ? openDropDown : closeDropDown)}
+    250ms ease-in-out forwards;
+  transform-origin: top center;
 
   position: absolute;
   top: 90px;
 `;
 
-const NavButton = styled.p`
+const NavButton = styled(Link)`
   font-family: Frank Ruhl Libre;
   font-weight: 700;
   font-size: 16px;
@@ -29,9 +53,7 @@ const NavButton = styled.p`
   padding: 15px 0 15px 15px;
   background-color: #ffffff;
 
-  cursor: pointer;
+  display: block;
 
-  :hover {
-    background-color: red;
-  }
+  cursor: pointer;
 `;

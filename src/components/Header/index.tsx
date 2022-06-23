@@ -10,33 +10,35 @@ export default function Header() {
 
   return (
     <Container>
-      {menuIsOpen && <NavButtonsMobile />}
+      <NavButtonsMobile menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
 
-      <img src={logo} alt="" />
-      <Logo>
-        Uehara
-        <br />
-        Advocacia
-      </Logo>
-      {menuIsOpen ? (
-        <IoClose onClick={() => setMenuIsOpen(false)} className="menu-icon" />
-      ) : (
-        <HiOutlineMenu
-          onClick={() => setMenuIsOpen(true)}
-          className="menu-icon"
-        />
-      )}
+      <InsideContainer>
+        <img src={logo} alt="" />
+        <Logo>
+          Uehara
+          <br />
+          Advocacia
+        </Logo>
+        {menuIsOpen ? (
+          <IoClose onClick={() => setMenuIsOpen(false)} className="menu-icon" />
+        ) : (
+          <HiOutlineMenu
+            onClick={() => setMenuIsOpen(true)}
+            className="menu-icon"
+          />
+        )}
+      </InsideContainer>
     </Container>
   );
 }
 
 const Container = styled.header`
-  width: 90%;
+  width: 100%;
 
   color: #e5b081;
 
   display: flex;
-  align-items: center;
+  justify-content: center;
 
   box-sizing: border-box;
   padding: 18px 0;
@@ -47,6 +49,15 @@ const Container = styled.header`
   top: 0;
 
   z-index: 1;
+`;
+
+const InsideContainer = styled.div`
+  width: 90%;
+
+  display: flex;
+  align-items: center;
+
+  position: relative;
 
   img {
     height: 65px;
@@ -69,5 +80,5 @@ const Logo = styled.p`
 
   text-align: left;
 
-  margin-left: 5px;
+  margin-left: 10px;
 `;

@@ -1,9 +1,9 @@
 const navButtonsArray = [
-  { name: "Home" },
-  { name: "Áreas de Atuação" },
-  { name: "Contato" },
-  { name: "Quem Somos" },
-  { name: "Enviar Mensagem" },
+  { name: "Home", to: "home" },
+  { name: "Áreas de Atuação", to: "actingAreas" },
+  { name: "Contato", to: "contact" },
+  { name: "Quem Somos", to: "whoWeAre" },
+  { name: "Enviar Mensagem", to: "sendMessage" },
 ];
 
 export default navButtonsArray;

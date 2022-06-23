@@ -1,10 +1,11 @@
 import { BsFillTelephoneFill } from "react-icons/bs";
 import background from "../../assets/background.jpeg";
 import styled from "styled-components";
+import { ContainerNameProp } from "../../types";
 
 export default function Contact() {
   return (
-    <Container>
+    <Container name="contact">
       <BackgroundImage src={background} alt="" />
       <BackgroundDarkness />
 
@@ -18,7 +19,7 @@ export default function Contact() {
   );
 }
 
-const Container = styled.div`
+const Container = styled.div<ContainerNameProp>`
   width: 100%;
 
   display: flex;
