@@ -30,6 +30,10 @@ const Container = styled.div<ContainerNameProp>`
   padding: 22px 0;
 
   position: relative;
+
+  @media (min-width: 600px) {
+    padding: 55px 0;
+  }
 `;
 
 const BackgroundImage = styled.img`
@@ -72,6 +76,12 @@ const Title = styled.p`
   margin-bottom: 15px;
 
   z-index: 0;
+
+  @media (min-width: 800px) {
+    font-size: 32px;
+
+    margin-bottom: 20px;
+  }
 `;
 
 const Description = styled.p`
@@ -84,6 +94,10 @@ const Description = styled.p`
   color: #e1e1e1;
 
   z-index: 0;
+
+  @media (min-width: 800px) {
+    font-size: 20px;
+  }
 `;
 
 const Button = styled.a`
@@ -111,5 +125,18 @@ const Button = styled.a`
 
   .phone-icon {
     font-size: 18px;
+  }
+
+  @media (min-width: 800px) {
+    width: 260px;
+    height: 59px;
+
+    font-size: 20px;
+
+    margin-top: 30px;
+
+    .phone-icon {
+      font-size: 21px;
+    }
   }
 `;
