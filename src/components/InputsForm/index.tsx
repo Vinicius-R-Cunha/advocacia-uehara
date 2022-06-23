@@ -2,6 +2,10 @@ import background from "../../assets/background_inputs.avif";
 import styled from "styled-components";
 
 export default function InputsForm() {
+  function handleSubmit(e: React.MouseEvent) {
+    e.preventDefault();
+  }
+
   return (
     <Container>
       <BackgroundImage src={background} alt="" />
@@ -12,7 +16,7 @@ export default function InputsForm() {
       <Input type="text" placeholder="E-mail" />
       <Input type="text" placeholder="Telefone" />
       <Textarea placeholder="Mensagem"></Textarea>
-      <Button>Enviar mensagem</Button>
+      <Button onClick={(e) => handleSubmit(e)}>Enviar mensagem</Button>
     </Container>
   );
 }
@@ -129,7 +133,7 @@ const Textarea = styled.textarea`
 const Button = styled.button`
   all: unset;
 
-  width: 68%;
+  width: 55%;
   height: 49px;
 
   font-size: 17px;

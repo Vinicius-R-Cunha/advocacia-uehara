@@ -10,7 +10,7 @@ export default function Contact() {
 
       <Title>Atendimento por Telefone</Title>
       <Description>Clique no botão e entre em contato agora mesmo.</Description>
-      <Button>
+      <Button href="tel:11942369346">
         <BsFillTelephoneFill className="phone-icon" />
         (11) 94236-9346
       </Button>
@@ -85,7 +85,7 @@ const Description = styled.p`
   z-index: 0;
 `;
 
-const Button = styled.button`
+const Button = styled.a`
   all: unset;
 
   width: 210px;

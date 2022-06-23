@@ -1,21 +1,12 @@
 import styled from "styled-components";
 import background from "../../assets/background.jpeg";
 import { BsWhatsapp } from "react-icons/bs";
-import { HiOutlineMenu } from "react-icons/hi";
-import logo from "../../assets/logo.png";
+import Header from "../Header";
 
-export default function Introduction() {
+export default function Introduction({ openWhatsApp }: any) {
   return (
     <Container>
-      <Header>
-        <img src={logo} alt="" />
-        <Logo>
-          Uehara
-          <br />
-          Advocacia
-        </Logo>
-        <HiOutlineMenu className="menu-icon" />
-      </Header>
+      <Header />
 
       <BackgroundImage src={background} alt="" />
       <BackgroundDarkness />
@@ -23,7 +14,7 @@ export default function Introduction() {
       <InsideContainer>
         <Title>Escritório de Advocacia Especializado</Title>
         <Description>Criminalista • Civil • Família</Description>
-        <Button>
+        <Button onClick={openWhatsApp}>
           Entre em contato
           <BsWhatsapp className="phone-icon" />
         </Button>
@@ -43,48 +34,6 @@ const Container = styled.div`
   padding: 190px 0 65px 0;
 
   position: relative;
-`;
-
-const Header = styled.header`
-  width: 90%;
-
-  color: #e5b081;
-
-  display: flex;
-  align-items: center;
-
-  box-sizing: border-box;
-  padding: 18px 0;
-
-  gap: 10px;
-
-  position: absolute;
-  top: 0;
-
-  z-index: 1;
-
-  img {
-    height: 65px;
-
-    border-radius: 50%;
-  }
-
-  .menu-icon {
-    font-size: 32px;
-
-    position: absolute;
-    right: 0px;
-  }
-`;
-
-const Logo = styled.p`
-  font-family: Playball;
-  font-size: 30px;
-  text-align: center;
-
-  text-align: left;
-
-  margin-left: 5px;
 `;
 
 const InsideContainer = styled.div`

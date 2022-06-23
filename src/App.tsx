@@ -17,7 +17,7 @@ export default function App() {
 
   return (
     <>
-      <Introduction />
+      <Introduction openWhatsApp={openWhatsApp} />
       <ActingAreas />
       <Contact />
       <WhoWeAre />
