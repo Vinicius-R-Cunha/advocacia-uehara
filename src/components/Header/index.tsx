@@ -4,6 +4,7 @@ import { IoClose } from "react-icons/io5";
 import logo from "../../assets/logo.png";
 import NavButtonsMobile from "../NavButtonsMobile";
 import { useState } from "react";
+import NavButtons from "../NavButtons";
 
 export default function Header() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -27,6 +28,7 @@ export default function Header() {
             className="menu-icon"
           />
         )}
+        <NavButtons />
       </InsideContainer>
     </Container>
   );
@@ -49,6 +51,10 @@ const Container = styled.header`
   top: 0;
 
   z-index: 1;
+
+  @media (min-width: 850px) {
+    padding: 40px 0;
+  }
 `;
 
 const InsideContainer = styled.div`
@@ -71,6 +77,27 @@ const InsideContainer = styled.div`
     position: absolute;
     right: 0px;
   }
+
+  @media (min-width: 850px) {
+    width: 90%;
+    max-width: 1300px;
+
+    img {
+      height: 95px;
+
+      border-radius: 50%;
+    }
+
+    .menu-icon {
+      font-size: 40px;
+    }
+  }
+
+  @media (min-width: 1125px) {
+    .menu-icon {
+      display: none;
+    }
+  }
 `;
 
 const Logo = styled.p`
@@ -81,4 +108,10 @@ const Logo = styled.p`
   text-align: left;
 
   margin-left: 10px;
+
+  @media (min-width: 850px) {
+    font-size: 45px;
+
+    margin-left: 20px;
+  }
 `;

@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import openDropDown from "../../animations/openDropDown";
-import closeDropDown from "../../animations/closeDropDown";
 import navButtonsArray from "../../data/navButtons";
 import { Link } from "react-scroll";
 
@@ -32,14 +31,21 @@ export default function NavButtonsMobile({ menuIsOpen, setMenuIsOpen }: any) {
 const Container = styled.nav<Props>`
   width: 100%;
 
-  display: ${(props) => (props.menuIsOpen ? "block" : "hidden")};
+  display: ${(props) => (props.menuIsOpen ? "block" : "none")};
 
-  animation: ${(props) => (props.menuIsOpen ? openDropDown : closeDropDown)}
-    250ms ease-in-out forwards;
+  animation: ${openDropDown} 250ms ease-in-out forwards;
   transform-origin: top center;
 
   position: absolute;
   top: 90px;
+
+  @media (min-width: 850px) {
+    top: 145px;
+  }
+
+  @media (min-width: 1125px) {
+    display: none;
+  }
 `;
 
 const NavButton = styled(Link)`

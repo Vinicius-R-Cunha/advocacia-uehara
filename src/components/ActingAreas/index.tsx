@@ -3,10 +3,6 @@ import styled from "styled-components";
 import areasArray, { areasArrayInterface } from "../../data/actingAreas";
 import { ContainerNameProp } from "../../types";
 import ReadMore from "../ReadMore";
-import {
-  BsFillArrowLeftCircleFill,
-  BsFillArrowRightCircleFill,
-} from "react-icons/bs";
 
 export default function ActingAreas() {
   const [actingAreasArray, setActingAreasArray] = useState([] as any[]);
@@ -71,7 +67,7 @@ const Container = styled.div<ContainerNameProp>`
   justify-content: center;
   align-items: center;
 
-  padding: 30px 0;
+  padding: 30px 0 90px 0;
 
   background-color: #ffffff;
 `;

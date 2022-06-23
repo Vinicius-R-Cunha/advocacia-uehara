@@ -35,17 +35,24 @@ const Container = styled.div<ContainerNameProp>`
   padding: 190px 0 65px 0;
 
   position: relative;
+
+  @media (min-width: 800px) {
+    padding: 400px 0 205px 0;
+  }
 `;
 
 const InsideContainer = styled.div`
   width: 90%;
-
-  margin-left: 10px;
+  max-width: 1300px;
 
   display: flex;
   flex-direction: column;
 
   z-index: 0;
+
+  @media (min-width: 800px) {
+    box-sizing: border-box;
+  }
 `;
 
 const BackgroundImage = styled.img`
@@ -87,6 +94,16 @@ const Title = styled.p`
   margin-bottom: 15px;
 
   z-index: 0;
+
+  @media (min-width: 800px) {
+    font-size: 30px;
+  }
+
+  @media (min-width: 1250px) {
+    font-size: 40px;
+
+    margin-bottom: 25px;
+  }
 `;
 
 const Description = styled.p`
@@ -98,6 +115,14 @@ const Description = styled.p`
   color: #e1e1e1;
 
   z-index: 0;
+
+  @media (min-width: 800px) {
+    font-size: 19px;
+  }
+
+  @media (min-width: 1250px) {
+    font-size: 22px;
+  }
 `;
 
 const Button = styled.button`
@@ -128,5 +153,16 @@ const Button = styled.button`
 
     margin-left: 3px;
     margin-bottom: 2px;
+  }
+
+  @media (min-width: 800px) {
+    width: 260px;
+    height: 57px;
+
+    font-size: 19px;
+  }
+
+  @media (min-width: 1250px) {
+    margin-top: 40px;
   }
 `;

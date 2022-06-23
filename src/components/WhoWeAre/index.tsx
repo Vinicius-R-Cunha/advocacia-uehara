@@ -34,6 +34,8 @@ const Container = styled.div<ContainerNameProp>`
   align-items: center;
 
   background-color: #ffffff;
+
+  padding-bottom: 25px;
 `;
 
 const Title = styled.p`
@@ -55,6 +57,7 @@ const Title = styled.p`
 
 const Description = styled.div`
   width: 80%;
+  max-width: 1200px;
 
   font-size: 16px;
   letter-spacing: 1px;

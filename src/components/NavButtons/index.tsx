@@ -1,8 +1,8 @@
+import { Link } from "react-scroll";
 import styled from "styled-components";
 import navButtonsArray from "../../data/navButtons";
-import { Link } from "react-scroll";
 
-export default function Footer() {
+export default function NavButtons() {
   return (
     <Container>
       {navButtonsArray.map((button) => {
@@ -22,23 +22,21 @@ export default function Footer() {
   );
 }
 
-const Container = styled.footer`
-  width: 100%;
+const Container = styled.div`
+  display: none;
 
-  padding: 15px 0;
+  gap: 30px;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  position: absolute;
+  right: 0;
+  z-index: 1;
 
-  background-color: #f3f3f3;
+  @media (min-width: 1125px) {
+    display: flex;
+  }
 
-  @media (min-width: 850px) {
-    padding: 30px 0;
-
-    flex-direction: row;
-    gap: 30px;
+  @media (min-width: 1380px) {
+    gap: 45px;
   }
 `;
 
@@ -46,15 +44,11 @@ const NavButton = styled(Link)`
   font-family: Frank Ruhl Libre;
   font-weight: 700;
   font-size: 18px;
-  letter-spacing: 1.4px;
-  line-height: 35px;
-  color: #000000;
+  letter-spacing: 1px;
+  line-height: 18px;
+  color: #ffffff;
 
   display: block;
 
   cursor: pointer;
-
-  @media (min-width: 850px) {
-    font-size: 20px;
-  }
 `;

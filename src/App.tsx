@@ -53,4 +53,8 @@ const WhatsIcon = styled.div`
   left: 15px;
 
   z-index: 2;
+
+  @media (min-width: 800px) {
+    display: none;
+  }
 `;

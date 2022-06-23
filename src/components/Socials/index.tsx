@@ -33,6 +33,13 @@ const Container = styled.div`
   gap: 20px;
 
   background-color: #ffffff;
+
+  @media (min-width: 1000px) {
+    flex-direction: row;
+    justify-content: center;
+
+    gap: 60px;
+  }
 `;
 
 const SocialDiv = styled.div`
@@ -54,6 +61,26 @@ const SocialDiv = styled.div`
     font-size: 45px;
     color: #c37127;
   }
+
+  @media (min-width: 426px) {
+    justify-content: center;
+  }
+
+  @media (min-width: 500px) {
+    .phone-icon {
+      font-size: 39px;
+    }
+
+    .email-icon {
+      font-size: 49px;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    width: auto;
+
+    flex-direction: row;
+  }
 `;
 
 const Social = styled.div`
@@ -71,4 +98,8 @@ const Description = styled.p`
   line-height: 28px;
   text-align: center;
   color: #c37127;
+
+  @media (min-width: 500px) {
+    font-size: 20px;
+  }
 `;
