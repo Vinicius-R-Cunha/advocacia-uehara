@@ -32,11 +32,11 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
 
-  background-color: #2c2c2c;
+  background-color: #ffffff;
 `;
 
 const Title = styled.p`
-  padding: 20px 0;
+  padding: 25px 0;
 
   font-family: Frank Ruhl Libre;
   font-weight: 700;
@@ -46,7 +46,7 @@ const Title = styled.p`
   color: #c37127;
 `;
 
-const Description = styled.p`
+const Description = styled.div`
   width: 80%;
 
   font-size: 16px;
@@ -55,7 +55,7 @@ const Description = styled.p`
   text-align: justify;
   color: grey;
 
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 `;
 
 const Paragraph = styled.p`

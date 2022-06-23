@@ -1,41 +1,22 @@
-import action from "../../assets/action1.jpg";
 import styled from "styled-components";
+import areasArray from "../../data/actingAreas";
 
 export default function ActingAreas() {
   return (
     <Container>
       <Title>Áreas de atuação</Title>
-      <Area>
-        <Image src={action} alt="" />
-        <BackgroundDarkness />
 
-        <Name>Criminalista Empresarial e Pessoa Física</Name>
-        <Info>Ler sobre</Info>
-      </Area>
+      {areasArray.map((area) => {
+        return (
+          <Area key={area.id}>
+            <Image src={area.src} alt="" />
+            <BackgroundDarkness />
 
-      <Area>
-        <Image src={action} alt="" />
-        <BackgroundDarkness />
-
-        <Name>Criminalista Empresarial e Pessoa Física</Name>
-        <Info>Ler sobre</Info>
-      </Area>
-
-      <Area>
-        <Image src={action} alt="" />
-        <BackgroundDarkness />
-
-        <Name>Direito Civil</Name>
-        <Info>Ler sobre</Info>
-      </Area>
-
-      <Area>
-        <Image src={action} alt="" />
-        <BackgroundDarkness />
-
-        <Name>Direito de Família</Name>
-        <Info>Ler sobre</Info>
-      </Area>
+            <Name>{area.name}</Name>
+            <Info>Ler sobre</Info>
+          </Area>
+        );
+      })}
     </Container>
   );
 }
@@ -143,6 +124,7 @@ const Info = styled.div`
 
   position: absolute;
   bottom: 101px;
-  right: 15px;
+  left: 15px;
+
   z-index: 0;
 `;

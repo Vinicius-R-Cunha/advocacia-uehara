@@ -1,10 +1,10 @@
-import Header from "./components/Header";
 import Introduction from "./components/Introduction";
 import ActingAreas from "./components/ActingAreas";
 import WhoWeAre from "./components/WhoWeAre";
 import Contact from "./components/Contact";
 import InputsForm from "./components/InputsForm";
 import Socials from "./components/Socials";
+import Footer from "./components/Footer";
 import { BsWhatsapp } from "react-icons/bs";
 import "./styles/reset.css";
 import "./styles/index.css";
@@ -17,16 +17,16 @@ export default function App() {
 
   return (
     <>
-      <Header />
       <Introduction />
       <ActingAreas />
-      <WhoWeAre />
       <Contact />
+      <WhoWeAre />
       <InputsForm />
       <Socials />
-      {/* <WhatsIcon onClick={openWhatsApp}>
+      <WhatsIcon onClick={openWhatsApp}>
         <BsWhatsapp />
-      </WhatsIcon> */}
+      </WhatsIcon>
+      <Footer />
     </>
   );
 }
@@ -46,7 +46,7 @@ const WhatsIcon = styled.div`
 
   border-radius: 50%;
 
-  box-shadow: -2px 5px 25px #033821;
+  box-shadow: -2px 5px 15px #033821;
 
   position: fixed;
   bottom: 15px;

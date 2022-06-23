@@ -1,9 +1,13 @@
 import { BsFillTelephoneFill } from "react-icons/bs";
+import background from "../../assets/background.jpeg";
 import styled from "styled-components";
 
 export default function Contact() {
   return (
     <Container>
+      <BackgroundImage src={background} alt="" />
+      <BackgroundDarkness />
+
       <Title>Atendimento por Telefone</Title>
       <Description>Clique no botão e entre em contato agora mesmo.</Description>
       <Button>
@@ -24,8 +28,33 @@ const Container = styled.div`
 
   padding: 22px 0;
 
-  background-color: #ffffff;
-  /* background-color: #211a0d; */
+  position: relative;
+`;
+
+const BackgroundImage = styled.img`
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  z-index: -3;
+`;
+
+const BackgroundDarkness = styled.div`
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.76);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  z-index: 0;
 `;
 
 const Title = styled.p`
@@ -37,10 +66,11 @@ const Title = styled.p`
   letter-spacing: 2px;
   line-height: 28px;
   text-align: center;
-  color: #c37127;
-  /* color: #d5c79a; */
+  color: #d8cca3;
 
   margin-bottom: 15px;
+
+  z-index: 0;
 `;
 
 const Description = styled.p`
@@ -50,7 +80,9 @@ const Description = styled.p`
   letter-spacing: 1px;
   line-height: 18px;
   text-align: center;
-  color: grey;
+  color: #e1e1e1;
+
+  z-index: 0;
 `;
 
 const Button = styled.button`
@@ -73,6 +105,8 @@ const Button = styled.button`
 
   background-color: #e0a067;
   border-radius: 6px;
+
+  z-index: 0;
 
   .phone-icon {
     font-size: 18px;
