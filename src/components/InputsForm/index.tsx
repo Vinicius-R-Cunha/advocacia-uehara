@@ -67,19 +67,23 @@ const Title = styled.p`
   font-weight: 700;
   font-size: 29px;
   letter-spacing: 2px;
-  line-height: 28px;
   text-align: center;
   color: #d5c79a;
 
   margin-bottom: 8px;
 
   z-index: 0;
+
+  @media (min-width: 800px) {
+    font-size: 34px;
+  }
 `;
 
 const Input = styled.input`
   all: unset;
 
   width: 88%;
+  max-width: 1200px;
   height: 45px;
 
   font-weight: 400;
@@ -102,6 +106,7 @@ const Input = styled.input`
 
 const Textarea = styled.textarea`
   width: 88%;
+  max-width: 1200px;
   height: 130px;
 
   font-weight: 400;
@@ -135,6 +140,7 @@ const Button = styled.button`
   all: unset;
 
   width: 55%;
+  max-width: 250px;
   height: 49px;
 
   font-size: 17px;
@@ -156,5 +162,11 @@ const Button = styled.button`
 
   .phone-icon {
     font-size: 18px;
+  }
+
+  @media (min-width: 800px) {
+    height: 55px;
+
+    font-size: 20px;
   }
 `;
