@@ -37,14 +37,20 @@ const Container = styled.div<ContainerNameProp>`
 `;
 
 const Title = styled.p`
-  padding: 25px 0;
-
   font-family: Frank Ruhl Libre;
   font-weight: 700;
   font-size: 28px;
   letter-spacing: 2px;
   line-height: 28px;
   color: #c37127;
+
+  padding: 25px 0;
+
+  @media (min-width: 800px) {
+    font-size: 35px;
+
+    padding: 45px 0;
+  }
 `;
 
 const Description = styled.div`
@@ -57,6 +63,11 @@ const Description = styled.div`
   color: grey;
 
   padding-bottom: 20px;
+
+  @media (min-width: 800px) {
+    font-size: 20px;
+    line-height: 22px;
+  }
 `;
 
 const Paragraph = styled.p`

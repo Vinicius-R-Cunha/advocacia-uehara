@@ -17,16 +17,16 @@ export default function App() {
 
   return (
     <>
-      {/* <Introduction openWhatsApp={openWhatsApp} /> */}
-      {/* <ActingAreas /> */}
+      <Introduction openWhatsApp={openWhatsApp} />
+      <ActingAreas />
       <Contact />
-      {/* <WhoWeAre />
+      <WhoWeAre />
       <InputsForm />
       <Socials />
       <Footer />
       <WhatsIcon onClick={openWhatsApp}>
         <BsWhatsapp />
-      </WhatsIcon> */}
+      </WhatsIcon>
     </>
   );
 }
