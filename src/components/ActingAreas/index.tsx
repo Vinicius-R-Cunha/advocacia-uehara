@@ -3,9 +3,14 @@ import styled from "styled-components";
 import areasArray, { areasArrayInterface } from "../../data/actingAreas";
 import { ContainerNameProp } from "../../types";
 import ReadMore from "../ReadMore";
+import {
+  BsFillArrowLeftCircleFill,
+  BsFillArrowRightCircleFill,
+} from "react-icons/bs";
 
 export default function ActingAreas() {
   const [actingAreasArray, setActingAreasArray] = useState([] as any[]);
+  const [scrollX, setScrollX] = useState(0);
 
   useEffect(() => {
     setActingAreasArray(addReadMoreIsOpenKey(areasArray));
@@ -30,21 +35,30 @@ export default function ActingAreas() {
     <Container name="actingAreas">
       <Title>Áreas de atuação</Title>
 
-      {actingAreasArray.map((area: any) => {
-        return (
-          <Area key={area.name}>
-            <Image src={area.src} alt="" />
-            <BackgroundDarkness />
+      <Areas
+        style={{
+          marginLeft: scrollX,
+          transition: "all ease 0.9s",
+        }}
+      >
+        {actingAreasArray.map((area: any) => {
+          return (
+            <Area key={area.name}>
+              <Image src={area.src} alt="" />
+              <BackgroundDarkness />
 
-            {area.readMoreIsOpen && (
-              <ReadMore area={area} readMoreSelection={readMoreSelection} />
-            )}
+              {area.readMoreIsOpen && (
+                <ReadMore area={area} readMoreSelection={readMoreSelection} />
+              )}
 
-            <Name>{area.name}</Name>
-            <Info onClick={() => readMoreSelection(area, true)}>Ler sobre</Info>
-          </Area>
-        );
-      })}
+              <Name>{area.name}</Name>
+              <Info onClick={() => readMoreSelection(area, true)}>
+                Ler sobre
+              </Info>
+            </Area>
+          );
+        })}
+      </Areas>
     </Container>
   );
 }
@@ -60,8 +74,6 @@ const Container = styled.div<ContainerNameProp>`
   padding: 30px 0;
 
   background-color: #ffffff;
-
-  gap: 28px;
 `;
 
 const Title = styled.p`
@@ -74,19 +86,57 @@ const Title = styled.p`
   line-height: 28px;
   text-align: center;
   color: #c37127;
+
+  @media (min-width: 850px) {
+    font-size: 33px;
+    padding: 15px 0;
+  }
+`;
+
+const Areas = styled.div`
+  width: 90%;
+
+  position: relative;
+
+  @media (min-width: 426px) {
+    width: 390px;
+  }
+
+  @media (min-width: 850px) {
+    width: 100%;
+
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 390px 390px;
+    column-gap: 4%;
+    row-gap: 15px;
+  }
+
+  @media (min-width: 1669px) {
+    grid-template-columns: 390px 390px 390px 390px;
+    column-gap: 33px;
+  }
 `;
 
 const Area = styled.div`
-  width: 90%;
+  width: 100%;
 
   display: flex;
   flex-direction: column;
   align-items: center;
 
+  margin-top: 28px;
+
+  flex: 0 0 auto;
+
+  position: relative;
+
   border-radius: 6px;
   box-shadow: 0 4px 45px -19px rgba(0, 0, 0, 0.5);
 
-  position: relative;
+  @media (min-width: 1270px) {
+    width: 390px;
+  }
 `;
 
 const Image = styled.img`
@@ -155,4 +205,6 @@ const Info = styled.div`
   left: 15px;
 
   z-index: 0;
+
+  cursor: pointer;
 `;

@@ -23,10 +23,10 @@ export default function App() {
       <WhoWeAre />
       <InputsForm />
       <Socials />
+      <Footer />
       <WhatsIcon onClick={openWhatsApp}>
         <BsWhatsapp />
       </WhatsIcon>
-      <Footer />
     </>
   );
 }
