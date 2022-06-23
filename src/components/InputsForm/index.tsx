@@ -1,4 +1,4 @@
-import background from "../../assets/background_inputs.avif";
+import background from "../../assets/background_inputs.jpg";
 import styled from "styled-components";
 import { ContainerNameProp } from "../../types";
 
@@ -53,7 +53,7 @@ const BackgroundDarkness = styled.div`
   width: 100%;
   height: 100%;
 
-  background-color: rgba(0, 0, 0, 0.55);
+  background-color: rgba(0, 0, 0, 0.65);
 
   position: absolute;
   top: 0;
