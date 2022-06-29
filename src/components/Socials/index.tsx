@@ -35,10 +35,7 @@ const Container = styled.div`
   background-color: #ffffff;
 
   @media (min-width: 1000px) {
-    flex-direction: row;
-    justify-content: center;
-
-    gap: 60px;
+    display: none;
   }
 `;
 

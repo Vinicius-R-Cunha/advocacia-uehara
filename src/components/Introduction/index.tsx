@@ -14,7 +14,7 @@ export default function Introduction({ openWhatsApp }: any) {
 
       <InsideContainer>
         <Title>Escritório de Advocacia Especializado</Title>
-        <Description>Criminalista • Civil • Família</Description>
+        <Description>Família • Penal • Civil</Description>
         <Button onClick={openWhatsApp}>
           Entre em contato
           <BsWhatsapp className="phone-icon" />

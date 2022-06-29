@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import areasArray, { areasArrayInterface } from "../../data/actingAreas";
+import { areasArrayInterface, areasArray } from "../../data/actingAreas";
 import { ContainerNameProp } from "../../types";
 import ReadMore from "../ReadMore";
 
 export default function ActingAreas() {
   const [actingAreasArray, setActingAreasArray] = useState([] as any[]);
-  const [scrollX, setScrollX] = useState(0);
 
   useEffect(() => {
     setActingAreasArray(addReadMoreIsOpenKey(areasArray));
@@ -31,12 +30,7 @@ export default function ActingAreas() {
     <Container name="actingAreas">
       <Title>Áreas de atuação</Title>
 
-      <Areas
-        style={{
-          marginLeft: scrollX,
-          transition: "all ease 0.9s",
-        }}
-      >
+      <Areas>
         {actingAreasArray.map((area: any) => {
           return (
             <Area key={area.name}>
@@ -98,19 +92,19 @@ const Areas = styled.div`
     width: 390px;
   }
 
-  @media (min-width: 850px) {
+  @media (min-width: 1020px) {
     width: 100%;
 
     display: grid;
     justify-content: center;
-    grid-template-columns: 390px 390px;
+    grid-template-columns: 27% 27% 27%;
     column-gap: 4%;
     row-gap: 15px;
   }
 
   @media (min-width: 1669px) {
-    grid-template-columns: 390px 390px 390px 390px;
-    column-gap: 33px;
+    grid-template-columns: 390px 390px 390px;
+    column-gap: 45px;
   }
 `;
 
@@ -129,10 +123,6 @@ const Area = styled.div`
 
   border-radius: 6px;
   box-shadow: 0 4px 45px -19px rgba(0, 0, 0, 0.5);
-
-  @media (min-width: 1270px) {
-    width: 390px;
-  }
 `;
 
 const Image = styled.img`
@@ -140,6 +130,8 @@ const Image = styled.img`
   height: 340px;
 
   object-fit: cover;
+
+  transform: scaleX(-1);
 
   border-radius: 6px 6px 0 0;
 `;

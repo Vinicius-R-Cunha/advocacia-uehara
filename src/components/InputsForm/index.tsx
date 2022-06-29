@@ -1,6 +1,8 @@
 import background from "../../assets/background_inputs.jpg";
 import styled from "styled-components";
 import { ContainerNameProp } from "../../types";
+import { BsFillTelephoneFill } from "react-icons/bs";
+import { MdEmail } from "react-icons/md";
 
 export default function InputsForm() {
   function handleSubmit(e: React.MouseEvent) {
@@ -13,16 +15,36 @@ export default function InputsForm() {
       <BackgroundDarkness />
 
       <Title>Entre em contato:</Title>
-      <Input type="text" placeholder="Nome" />
-      <Input type="text" placeholder="E-mail" />
-      <Input type="text" placeholder="Telefone" />
-      <Textarea placeholder="Mensagem"></Textarea>
-      <Button onClick={(e) => handleSubmit(e)}>Enviar mensagem</Button>
+
+      <FormSocials>
+        <Form>
+          <Input type="text" placeholder="Nome" />
+          <Input type="text" placeholder="E-mail" />
+          <Input type="text" placeholder="Telefone" />
+          <Textarea placeholder="Mensagem"></Textarea>
+          <Button onClick={(e) => handleSubmit(e)}>Enviar mensagem</Button>
+        </Form>
+
+        <Socials>
+          <SocialDiv>
+            <Social>
+              <BsFillTelephoneFill className="phone-icon" />
+            </Social>
+            <Description>(11) 94236-9346</Description>
+          </SocialDiv>
+          <SocialDiv>
+            <Social>
+              <MdEmail className="email-icon" />
+            </Social>
+            <Description>tamy_uehara@hotmail.com</Description>
+          </SocialDiv>
+        </Socials>
+      </FormSocials>
     </Container>
   );
 }
 
-const Container = styled.form<ContainerNameProp>`
+const Container = styled.div<ContainerNameProp>`
   width: 100%;
 
   display: flex;
@@ -30,8 +52,6 @@ const Container = styled.form<ContainerNameProp>`
   align-items: center;
 
   padding: 45px 0 50px 0;
-
-  gap: 18px;
 
   position: relative;
 `;
@@ -70,7 +90,7 @@ const Title = styled.p`
   text-align: center;
   color: #d5c79a;
 
-  margin-bottom: 8px;
+  margin-bottom: 38px;
 
   z-index: 0;
 
@@ -79,11 +99,36 @@ const Title = styled.p`
   }
 `;
 
+const FormSocials = styled.div`
+  width: 100%;
+  max-width: 900px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: 1000px) {
+    justify-content: space-between;
+  }
+`;
+
+const Form = styled.form`
+  width: 88%;
+  max-width: 500px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 18px;
+
+  z-index: 0;
+`;
+
 const Input = styled.input`
   all: unset;
 
-  width: 88%;
-  max-width: 1200px;
+  width: 100%;
   height: 45px;
 
   font-weight: 400;
@@ -97,7 +142,6 @@ const Input = styled.input`
 
   background-color: #ffffff;
 
-  z-index: 0;
   ::placeholder {
     font-weight: 700;
     color: rgba(0, 0, 0, 0.4);
@@ -105,12 +149,11 @@ const Input = styled.input`
 `;
 
 const Textarea = styled.textarea`
-  width: 88%;
-  max-width: 1200px;
+  width: 100%;
   height: 130px;
 
   font-weight: 400;
-  font-size: 15.5px;
+  font-size: 17px;
   letter-spacing: 0.5px;
   line-height: 28px;
   color: #000000;
@@ -123,8 +166,6 @@ const Textarea = styled.textarea`
   border-radius: 6px;
 
   background-color: #ffffff;
-
-  z-index: 0;
 
   :focus {
     outline: none;
@@ -139,8 +180,8 @@ const Textarea = styled.textarea`
 const Button = styled.button`
   all: unset;
 
-  width: 55%;
-  max-width: 250px;
+  width: 60%;
+  max-width: 220px;
   height: 49px;
 
   font-size: 17px;
@@ -158,8 +199,6 @@ const Button = styled.button`
   background-color: #e0a067;
   border-radius: 6px;
 
-  z-index: 0;
-
   .phone-icon {
     font-size: 18px;
   }
@@ -167,6 +206,66 @@ const Button = styled.button`
   @media (min-width: 800px) {
     height: 55px;
 
+    font-size: 20px;
+  }
+`;
+
+const Socials = styled.div`
+  display: none;
+
+  padding: 35px 0;
+
+  margin-bottom: 100px;
+
+  gap: 40px;
+
+  z-index: 0;
+
+  @media (min-width: 1000px) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+`;
+
+const SocialDiv = styled.div`
+  width: auto;
+
+  display: flex;
+  justify-content: flex-start;
+
+  align-items: center;
+
+  gap: 2px;
+
+  .phone-icon {
+    font-size: 39px;
+    color: #d5c79a;
+  }
+
+  .email-icon {
+    font-size: 49px;
+    color: #d5c79a;
+  }
+`;
+
+const Social = styled.div`
+  width: 70px;
+
+  display: flex;
+  justify-content: center;
+`;
+
+const Description = styled.p`
+  font-family: Frank Ruhl Libre;
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: 1px;
+  line-height: 28px;
+  text-align: center;
+  color: #d5c79a;
+
+  @media (min-width: 500px) {
     font-size: 20px;
   }
 `;

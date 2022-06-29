@@ -1,27 +1,29 @@
 import styled from "styled-components";
 import { ContainerNameProp } from "../../types";
+import img from "../../assets/background.jpeg";
 
 export default function WhoWeAre() {
   return (
     <Container name="whoWeAre">
       <Title>Quem somos</Title>
-      <Description>
-        <Paragraph>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel tenetur
-          sequi est dolorem, labore ducimus? Lorem ipsum dolor sit amet,
-        </Paragraph>
 
-        <Paragraph>
-          consectetur adipisicing elit. Inventore libero voluptatibus dicta
-          minus, facilis ipsa aspernatur numquam cumque mollitia consectetur non
-          error. Nostrum, velit quis.
-        </Paragraph>
-        <Paragraph>
-          consectetur adipisicing elit. Inventore libero voluptatibus dicta
-          minus, facilis ipsa aspernatur numquam cumque mollitia consectetur non
-          error. Nostrum, velit quis.
-        </Paragraph>
-      </Description>
+      <DescriptionImage>
+        <Description>
+          <Paragraph>
+            Escritório de advocacia, com atuação especializada nas áreas do
+            Direito Criminal, Direito de Família e Direito Civil, comprometido
+            em atender as necessidades do cliente de forma individualizada,
+            íntegra e transparente.
+          </Paragraph>
+          <Paragraph>
+            Atendimento personalizado, com o compromisso e determinação de
+            entregar resultados e soluções jurídicas estratégicas e seguras, a
+            fim de resguardar os direitos dos nossos clientes.
+          </Paragraph>
+        </Description>
+
+        <Image src={img} />
+      </DescriptionImage>
     </Container>
   );
 }
@@ -55,24 +57,57 @@ const Title = styled.p`
   }
 `;
 
-const Description = styled.div`
-  width: 80%;
-  max-width: 1200px;
+const DescriptionImage = styled.div`
+  width: 90%;
+  max-width: 1100px;
 
-  font-size: 16px;
-  letter-spacing: 1px;
-  line-height: 18px;
-  text-align: justify;
-  color: grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 10px;
 
   padding-bottom: 20px;
 
+  @media (min-width: 900px) {
+    flex-direction: row;
+
+    gap: 40px;
+  }
+`;
+
+const Description = styled.div`
+  width: 100%;
+
+  font-size: 16px;
+  letter-spacing: 1px;
+  line-height: 19px;
+  text-align: justify;
+  color: grey;
+
   @media (min-width: 800px) {
     font-size: 20px;
-    line-height: 22px;
   }
 `;
 
 const Paragraph = styled.p`
+  text-indent: 30px;
+
   margin-bottom: 20px;
+
+  @media (min-width: 800px) {
+    line-height: 25px;
+  }
+`;
+
+const Image = styled.img`
+  width: 100%;
+  height: 300px;
+
+  object-fit: cover;
+
+  @media (min-width: 900px) {
+    width: 900px;
+  }
 `;
