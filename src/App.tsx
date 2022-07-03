@@ -6,9 +6,11 @@ import InputsForm from "./components/InputsForm";
 import Socials from "./components/Socials";
 import Footer from "./components/Footer";
 import { BsWhatsapp } from "react-icons/bs";
+import styled from "styled-components";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./styles/reset.css";
 import "./styles/index.css";
-import styled from "styled-components";
 
 export default function App() {
   function openWhatsApp() {
@@ -27,6 +29,8 @@ export default function App() {
       <WhatsIcon onClick={openWhatsApp}>
         <BsWhatsapp />
       </WhatsIcon>
+
+      <ToastContainer />
     </>
   );
 }

@@ -3,10 +3,74 @@ import styled from "styled-components";
 import { ContainerNameProp } from "../../types";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
+import { useState } from "react";
+import { toast } from "react-toastify";
+import emailjs from "@emailjs/browser";
+
+export interface FormData {
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
+}
 
 export default function InputsForm() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  } as FormData);
+
   function handleSubmit(e: React.MouseEvent) {
     e.preventDefault();
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.phone ||
+      !formData.message
+    ) {
+      return toast.error("Preencha todos os campos!", {
+        position: "bottom-left",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
+
+    emailjs
+      .send(
+        process.env.REACT_APP_SERVICE_ID as string,
+        process.env.REACT_APP_TEMPLATE_ID as string,
+        formData as any,
+        process.env.REACT_APP_PUBLIC_KEY as string
+      )
+      .then(
+        (result) => {
+          toast.success("Mensagem enviada!", {
+            position: "bottom-left",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
+          setFormData({ name: "", email: "", phone: "", message: "" });
+        },
+        (error) => {
+          console.log(error.text);
+          setFormData({ name: "", email: "", phone: "", message: "" });
+        }
+      );
+  }
+
+  function handleFormData(e: React.ChangeEvent) {
+    var element = e.target as HTMLInputElement;
+    setFormData({ ...formData, [element.name]: element.value });
   }
 
   return (
@@ -18,10 +82,33 @@ export default function InputsForm() {
 
       <FormSocials>
         <Form>
-          <Input type="text" placeholder="Nome" />
-          <Input type="text" placeholder="E-mail" />
-          <Input type="text" placeholder="Telefone" />
-          <Textarea placeholder="Mensagem"></Textarea>
+          <Input
+            name="name"
+            type="text"
+            placeholder="Nome"
+            onChange={(e) => handleFormData(e)}
+            value={formData.name}
+          />
+          <Input
+            name="email"
+            type="text"
+            placeholder="E-mail"
+            onChange={(e) => handleFormData(e)}
+            value={formData.email}
+          />
+          <Input
+            name="phone"
+            type="text"
+            placeholder="Telefone"
+            onChange={(e) => handleFormData(e)}
+            value={formData.phone}
+          />
+          <Textarea
+            name="message"
+            placeholder="Mensagem"
+            onChange={(e) => handleFormData(e)}
+            value={formData.message}
+          ></Textarea>
           <Button onClick={(e) => handleSubmit(e)}>Enviar mensagem</Button>
         </Form>
 
@@ -198,6 +285,8 @@ const Button = styled.button`
 
   background-color: #e0a067;
   border-radius: 6px;
+
+  cursor: pointer;
 
   .phone-icon {
     font-size: 18px;
