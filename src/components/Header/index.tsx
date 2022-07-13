@@ -14,12 +14,8 @@ export default function Header() {
       <NavButtonsMobile menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
 
       <InsideContainer>
-        <img src={logo} alt="" />
-        <Logo>
-          Uehara
-          <br />
-          Advocacia
-        </Logo>
+        <Image src={logo} alt="" />
+
         {menuIsOpen ? (
           <IoClose onClick={() => setMenuIsOpen(false)} className="menu-icon" />
         ) : (
@@ -65,12 +61,6 @@ const InsideContainer = styled.div`
 
   position: relative;
 
-  img {
-    height: 65px;
-
-    border-radius: 50%;
-  }
-
   .menu-icon {
     font-size: 32px;
 
@@ -81,12 +71,6 @@ const InsideContainer = styled.div`
   @media (min-width: 850px) {
     width: 90%;
     max-width: 1300px;
-
-    img {
-      height: 95px;
-
-      border-radius: 50%;
-    }
 
     .menu-icon {
       font-size: 40px;
@@ -100,18 +84,10 @@ const InsideContainer = styled.div`
   }
 `;
 
-const Logo = styled.p`
-  font-family: Playball;
-  font-size: 30px;
-  text-align: center;
-
-  text-align: left;
-
-  margin-left: 10px;
+const Image = styled.img`
+  height: 65px;
 
   @media (min-width: 850px) {
-    font-size: 45px;
-
-    margin-left: 20px;
+    height: 85px;
   }
 `;

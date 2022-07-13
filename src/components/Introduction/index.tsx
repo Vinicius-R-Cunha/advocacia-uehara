@@ -148,6 +148,8 @@ const Button = styled.button`
 
   z-index: 0;
 
+  cursor: pointer;
+
   .phone-icon {
     font-size: 21px;
 
