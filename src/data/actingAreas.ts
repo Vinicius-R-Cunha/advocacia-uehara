@@ -1,4 +1,4 @@
-import action1 from "../assets/action1.avif";
+import action1 from "../assets/action1.jpg";
 import action2 from "../assets/action2.avif";
 import action3 from "../assets/action3.jpg";
 
